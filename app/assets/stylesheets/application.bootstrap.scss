@@ -1,2 +1,16 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.targetBox {
+  background-color: rgba(255, 255, 0, 0.205);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 60px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px dotted red;
+  transform: translate(-50%, -50%);
+}

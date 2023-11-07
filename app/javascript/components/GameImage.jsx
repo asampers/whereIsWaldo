@@ -1,7 +1,7 @@
 import React from "react";
 
-export default GameImage = () => {
+export default GameImage = ({onClick}) => {
   return (
-    <img src="fullHeist.jpg" className="img-fluid"/>
+    <img src="fullHeist.jpg" className="img-fluid" onClick={(e) => onClick(e)}/>
   )
 }
