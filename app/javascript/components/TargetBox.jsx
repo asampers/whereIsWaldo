@@ -1,7 +1,9 @@
 import React, { forwardRef} from "react";
 
-export default TargetBox = forwardRef((props, ref) => {
+export default TargetBox = forwardRef(({children}, ref) => {
   return (
-    <div className="targetBox" ref={ref}></div>
+    <div className="guess" ref={ref}>
+      {children}
+    </div>
   )
 })

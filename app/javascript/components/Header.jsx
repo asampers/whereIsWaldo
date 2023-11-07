@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default Header = () => {
   return (
-    <div className="container-fluid">
+    <div className="header container-fluid">
       <img src="charactersBanner.jpg" className="img-fluid"/>
     </div>
   )

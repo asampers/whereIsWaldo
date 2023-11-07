@@ -1,16 +1,25 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-.targetBox {
-  background-color: rgba(255, 255, 0, 0.205);
+.guess {
   position: absolute;
   display: none;
   align-items: center;
   justify-content: center;
+}
+
+.targetBox {
+  background-color: rgba(255, 255, 0, 0.205);
   height: 80px;
   width: 60px;
-  overflow: hidden;
   border-radius: 10px;
   border: 3px dotted red;
   transform: translate(-50%, -50%);
+}
+
+.guessBox {
+  height: 80px;
+  width: 20px;
+  border-radius: 10px;
+  transform: translate(-120%, -50%);
 }
