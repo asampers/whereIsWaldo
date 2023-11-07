@@ -9,6 +9,7 @@ export default Play = () => {
     let x = e.pageX;
     let y = e.pageY
     console.log(`${x}x + ${y}y`)
+    targetRef.current.style.display = 'flex';
     targetRef.current.style.left = x + 'px';
     targetRef.current.style.top = y + 'px';
   }
