@@ -21,8 +21,10 @@ export default Play = () => {
     targetRef.current.style.top = y + 'px';
   }
 
+  const closeTarget = () => {targetRef.current.style.display = 'none';}
+  
   const handleTarget = (name) => {
-    targetRef.current.style.display = 'none';
+    closeTarget();
     console.log(`You guessed ${name}`)
   }
 
@@ -30,7 +32,7 @@ export default Play = () => {
     <>
       <Header />
       <GameImage onClick={setTarget} />
-      <Target characters={characterList} ref={targetRef} />
+      <Target characters={characterList} ref={targetRef} onClick={closeTarget}/>
     </>
   )
 }
