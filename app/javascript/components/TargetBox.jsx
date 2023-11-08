@@ -1,15 +1,16 @@
 import React, { forwardRef} from "react";
 
-export default Target = forwardRef(({characters, onClick}, ref) => {
+export default Target = ({children, styled, onClick}) => {
+  let style = {left:styled.x + 'px', top:styled.y + 'px', display: styled.show ? 'flex' : 'none'}
   return (
-    <div className="guess" ref={ref}>
+    <div style={style} className="guess" >
       <div className="targetBox" onClick={() => onClick()}></div>
       <div className="guessBox dropdown">
         <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Who is it?</a>
         <ul className="dropdown-menu">
-          {characters}
+          {children}
         </ul>
       </div>
     </div>
   )
-})
+}
