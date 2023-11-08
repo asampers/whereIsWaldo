@@ -1,11 +1,16 @@
 import React, { useRef } from "react";
 import Header from "./Header";
 import GameImage from "./GameImage";
-import TargetBox from "./TargetBox";
+import Target from "./TargetBox";
 import GuessBtn from "./GuessBtn";
 
 export default Play = () => {
   const targetRef = useRef(null);
+
+  const characters = ["Da Vinci", "Kahlo", "Picasso", "Van Gogh", "Warhol"]
+  const characterList = characters.map((charac, i) => {
+    return <GuessBtn key={i} onClick={() => handleTarget(charac)}>{charac}</GuessBtn>
+  });
 
   const setTarget = (e) => {
     let x = e.pageX;
@@ -25,19 +30,7 @@ export default Play = () => {
     <>
       <Header />
       <GameImage onClick={setTarget} />
-      <TargetBox ref={targetRef}>
-        <div className="targetBox"></div>
-        <div className="guessBox dropdown">
-          <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Who is it?</a>
-          <ul className="dropdown-menu">
-            <GuessBtn onClick={() => handleTarget("Da Vinci")}>Da Vinci</GuessBtn>
-            <GuessBtn onClick={() => handleTarget("Kahlo")}>Kahlo</GuessBtn>
-            <GuessBtn onClick={() => handleTarget("Picasso")}>Picasso</GuessBtn>
-            <GuessBtn onClick={() => handleTarget("Van Gogh")}>Van Gogh</GuessBtn>
-            <GuessBtn onClick={() => handleTarget("Warhol")}>Warhol</GuessBtn>
-          </ul>
-        </div>
-      </TargetBox>
+      <Target characters={characterList} ref={targetRef} />
     </>
   )
 }
