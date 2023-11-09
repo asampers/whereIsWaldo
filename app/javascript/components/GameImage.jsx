@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-export default GameImage = ({onClick}) => {
+export default GameImage = forwardRef(({onClick}, ref) => {
   return (
-    <div className="gameImage container">
-      <img src="fullHeist.jpg" className="img-fluid" onClick={(e) => onClick(e)}/>
+    <div className="gameImage container-fluid d-flex justify-content-center">
+      <img src="fullHeist.jpg" className="heistImg img-fluid" ref={ref} onClick={(e) => onClick(e)}/>
     </div>
   )
-}
+})
