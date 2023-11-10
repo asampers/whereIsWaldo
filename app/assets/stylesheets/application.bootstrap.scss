@@ -1,12 +1,18 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-.header {
+.header, .footer {
   max-width: 1095px;
   background-color: #fff;
 }
+
 .header-img {
   max-height: 250px;
+}
+
+.checkMarks {
+  max-width: 750px;
+  position: absolute;
 }
 
 .guess {
@@ -58,5 +64,9 @@
 @media screen and (min-width: 1119px) {
   .heistImg {
     max-width: 1095px;
+  }
+
+  .footer {
+    padding: 0;
   }
 }
