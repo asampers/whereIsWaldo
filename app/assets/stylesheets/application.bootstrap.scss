@@ -1,8 +1,12 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+.header {
+  max-width: 1095px;
+  background-color: #fff;
+}
 .header-img {
-  max-height: 312px;
+  max-height: 250px;
 }
 
 .guess {
