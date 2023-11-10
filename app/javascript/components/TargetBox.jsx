@@ -1,4 +1,4 @@
-import React, { forwardRef} from "react";
+import React from "react";
 
 export default Target = ({children, styled, onClick}) => {
   let style = {left:styled.x + 'px', top:styled.y + 'px', display: styled.show ? 'flex' : 'none'}
