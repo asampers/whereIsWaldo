@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import GameImage from "./GameImage";
+import GuessBtn from "./GuessBtn";
 import Target from "./TargetBox";
 
 export default Gameboard = ({}) => {
@@ -7,7 +8,7 @@ export default Gameboard = ({}) => {
   const [guess, setGuess] = useState({x: null, y: null})
   const [imgSize, setImgSize] = useState({w:0, h:0})
   const [foundNames, setFoundNames] = useState([]);
-  const characters = [{name: "Da Vinci", x:0.169, y:0.473}, {name: "Kahlo", x:0.890, y:0.407}, {name: "Picasso", x:0.794, y:0.954}, {name: "Van Gogh", x:0.150, y:0.848}, {name: "Warhol", x:0.036, y:0.292}];
+  const characters = [{name: "Da Vinci", x:0.166, y:0.374}, {name: "Kahlo", x:0.895, y:0.2925}, {name: "Picasso", x:0.7875, y:0.944}, {name: "Van Gogh", x:0.145, y:0.824}, {name: "Warhol", x:0.0325, y:0.1625}];
 
   let characterList = characters.map((charac, i) => {
     if(!foundNames.includes(charac.name)) {
@@ -16,14 +17,17 @@ export default Gameboard = ({}) => {
   });
 
   const setAllStates = (e) => {
-    let guessX = e.nativeEvent.offsetX + 12;
+    let guessX = e.nativeEvent.offsetX;
+    let guessY = e.nativeEvent.offsetY
     let targetX = e.pageX;
-    let Y = e.pageY;
+    let targetY = e.pageY;
     let imgWidth = e.target.clientWidth;
-    let imgHeight = window.document.body.offsetHeight
-    setTargetPos({x:targetX, y:Y, show:true})
-    setGuess({x:guessX, y:Y})
+    let imgHeight = e.target.clientHeight;
+    setTargetPos({x:targetX, y:targetY, show:true})
+    setGuess({x:guessX, y:guessY})
     setImgSize({w: imgWidth, h: imgHeight})
+    console.log(`${guessX}x + ${guessY}y`)
+    console.log(`w:${imgWidth}, h:${imgHeight}`)
   }
 
   const closeTarget = () => {setTargetPos({...targetPos, show:false})}
