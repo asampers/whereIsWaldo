@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useRef} from "react";
 
 export default Target = ({children, styled, onClick}) => {
+  let dropdown = useRef()
   let style = {left:styled.x + 'px', top:styled.y + 'px', display: styled.show ? 'flex' : 'none'}
+  if (dropdown.current)dropdown.current.scrollIntoView({behavior:"smooth", block: "end", inline:"nearest"})
   return (
     <div style={style} className="guess" >
       <div className="targetBox" onClick={() => onClick()}></div>
       <div className="guessBox dropdown">
-        <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Who is it?</a>
+        <button ref={dropdown} className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Who is it?</button>
         <ul className="dropdown-menu">
           {children}
         </ul>
