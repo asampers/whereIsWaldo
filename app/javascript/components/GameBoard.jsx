@@ -2,16 +2,18 @@ import React, {useState} from "react";
 import GameImage from "./GameImage";
 import GuessBtn from "./GuessBtn";
 import Target from "./TargetBox";
+import { useFoundNamesDispatch, useFoundNames } from "./Context";
 
 export default Gameboard = ({}) => {
   const [targetPos, setTargetPos] = useState({x:0, y: 0, show: false})
   const [guess, setGuess] = useState({x: null, y: null})
   const [imgSize, setImgSize] = useState({w:0, h:0})
-  const [foundNames, setFoundNames] = useState([]);
+  const FoundNames = useFoundNames();
+  const dispatch = useFoundNamesDispatch()
   const characters = [{name: "Da Vinci", x:0.166, y:0.374}, {name: "Kahlo", x:0.895, y:0.2925}, {name: "Picasso", x:0.7875, y:0.944}, {name: "Van Gogh", x:0.145, y:0.824}, {name: "Warhol", x:0.0325, y:0.1625}];
 
   let characterList = characters.map((charac, i) => {
-    if(!foundNames.includes(charac.name)) {
+    if(!FoundNames.includes(charac.name)) {
       return <GuessBtn key={i} onClick={() => handleDropdownGuess(charac)}>{charac.name}</GuessBtn>
     }
   });
@@ -46,7 +48,7 @@ export default Gameboard = ({}) => {
 
   const handleDropdownGuess = (charac) => {
     let found = foundCharac(charac);
-    if(found){setFoundNames([...foundNames, charac.name])};
+    if(found){dispatch({type: 'added', nextName: charac.name})};
     
     let outcome = found ? `You found ${charac.name}` : 'Ope, try again!'
     closeTarget();
