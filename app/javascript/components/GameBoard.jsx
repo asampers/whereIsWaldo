@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import GameImage from "./GameImage";
 import GuessBtn from "./GuessBtn";
 import Target from "./TargetBox";
+import AlertOutcome from "./AlertOutcome";
 import { useFoundNamesDispatch, useFoundNames } from "./Context";
 
 export default Gameboard = ({}) => {
   const [targetPos, setTargetPos] = useState({x:0, y: 0, show: false})
+  const [outcome, setOutcome] = useState({visible: false, name:null});
   const [guess, setGuess] = useState({x: null, y: null})
   const [imgSize, setImgSize] = useState({w:0, h:0})
   const FoundNames = useFoundNames();
@@ -27,6 +29,7 @@ export default Gameboard = ({}) => {
     let imgHeight = e.target.clientHeight;
     setTargetPos({x:targetX, y:targetY, show:true})
     setGuess({x:guessX, y:guessY})
+    setOutcome({...outcome, visible: false})
     setImgSize({w: imgWidth, h: imgHeight})
   }
 
@@ -45,10 +48,10 @@ export default Gameboard = ({}) => {
   const handleDropdownGuess = (charac) => {
     let found = foundCharac(charac);
     if(found){dispatch({type: 'added', nextName: charac.name})};
-    
-    let outcome = found ? `You found ${charac.name}` : 'Ope, try again!'
+    let outcome = found ? charac.name : null;
     closeTarget();
-    console.log(outcome);
+    setOutcome({visible: true, name: outcome})
+    setTimeout(() => {setOutcome({visible: false, name: null})}, 3000)
   }
 
   return (
@@ -57,6 +60,7 @@ export default Gameboard = ({}) => {
       <Target styled={targetPos} onClick={closeTarget}>
         {characterList}
       </Target>
+      {outcome.visible && <AlertOutcome found={outcome.name} styled={targetPos}/>}
     </>  
   )
 }
