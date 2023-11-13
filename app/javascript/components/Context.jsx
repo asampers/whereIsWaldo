@@ -41,8 +41,6 @@ export function useFoundNamesDispatch() {
 }
 
 function foundNamesReducer(FoundNames, action) {
-  console.log(`Adding ${action.nextName}`)
-  console.log(action)
   switch (action.type) {
     case 'added': {
       return [...FoundNames, action.nextName];

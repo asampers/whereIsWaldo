@@ -28,8 +28,6 @@ export default Gameboard = ({}) => {
     setTargetPos({x:targetX, y:targetY, show:true})
     setGuess({x:guessX, y:guessY})
     setImgSize({w: imgWidth, h: imgHeight})
-    console.log(`${guessX}x + ${guessY}y`)
-    console.log(`w:${imgWidth}, h:${imgHeight}`)
   }
 
   const closeTarget = () => {setTargetPos({...targetPos, show:false})}
@@ -39,8 +37,6 @@ export default Gameboard = ({}) => {
     let right = guess.x + (.04 * imgSize.w)
     let top = guess.y - (.06 * imgSize.h)
     let bottom = guess.y + (.06 * imgSize.h)
-    console.log(`${left} <= ${charac.x  * imgSize.w} && ${charac.x  * imgSize.w} <= ${right}`)
-    console.log(`${top} <= ${charac.y * imgSize.h} && ${charac.y * imgSize.h} <= ${bottom}`)
     let xBtwn = left <= (charac.x  * imgSize.w) && (charac.x  * imgSize.w) <= right;
     let yBtwn = top <= (charac.y * imgSize.h) && (charac.y * imgSize.h) <= bottom;
     return xBtwn && yBtwn;
