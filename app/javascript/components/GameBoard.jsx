@@ -5,7 +5,7 @@ import Target from "./TargetBox";
 import AlertOutcome from "./AlertOutcome";
 import { useFoundNamesDispatch, useFoundNames } from "./Context";
 
-export default Gameboard = ({}) => {
+export default Gameboard = ({endGame}) => {
   const [targetPos, setTargetPos] = useState({x:0, y: 0, show: false})
   const [outcome, setOutcome] = useState({visible: false, name:null});
   const [guess, setGuess] = useState({x: null, y: null})
@@ -53,6 +53,7 @@ export default Gameboard = ({}) => {
     closeTarget();
     setOutcome({visible: true, name: outcome})
     setTimeout(() => {setOutcome({visible: false, name: null})}, 3000)
+    if(found && FoundNames.length == 4) {endGame()}
   }
 
   return (
