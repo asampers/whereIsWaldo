@@ -3,7 +3,7 @@ import React, {useRef} from "react";
 export default Target = ({children, styled, onClick}) => {
   let dropdown = useRef()
   let style = {left:styled.x + 'px', top:styled.y + 'px', display: styled.show ? 'flex' : 'none'}
-  if (dropdown.current)dropdown.current.scrollIntoView({behavior:"smooth", block: "end", inline:"nearest"})
+  if (dropdown.current)dropdown.current.scrollIntoView({ block: "end", inline:"nearest"})
   return (
     <div style={style} className="guess" >
       <div className="targetBox" onClick={() => onClick()}></div>

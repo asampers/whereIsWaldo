@@ -21,6 +21,7 @@ export default Gameboard = ({}) => {
   });
 
   const setAllStates = (e) => {
+    if (FoundNames.length == 5) return;
     let guessX = e.nativeEvent.offsetX;
     let guessY = e.nativeEvent.offsetY
     let targetX = e.pageX;
