@@ -3,7 +3,10 @@
 
 .header, .footer {
   max-width: 1095px;
-  background-color: #fff;
+}
+
+.header {
+  position: relative;
 }
 
 .timer {
@@ -24,6 +27,14 @@
 .checkMarks {
   max-width: 750px;
   position: absolute;
+  bottom: 0;
+}
+
+.found {
+  padding: .2rem .3rem;
+  opacity: 0.65;
+  background-color: #198754;
+  color: white;
 }
 
 .guess {
@@ -58,6 +69,14 @@
   .guessBox {
     transform: translate(-70%, -30%)
   }
+
+  .checkMarks {
+    bottom: -2%
+  }
+
+  .found {
+    padding: .1rem .2rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -70,6 +89,10 @@
   .guessBox {
     transform: translate(-30%, -30%)
   }
+
+  .checkMarks {
+    bottom: -8%
+  }
 }
 
 @media screen and (min-width: 1119px) {
@@ -79,5 +102,11 @@
 
   .footer {
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 755px) {
+  .checkMarks {
+    bottom: -5%;
   }
 }
