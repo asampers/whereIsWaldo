@@ -6,6 +6,9 @@ export default Timer = ({gameEnded, setFinalTime}) => {
   const [now, setNow] = useState(null);
   const [isRunning, setIsRunning] = useState(true);
   
+  let heightDifference = window.innerHeight - window.document.body.offsetHeight;
+  let style = {marginBottom: `${heightDifference > 0 ? heightDifference : 20}px`}
+
   useEffect(() => {
     if (gameEnded) {
       setFinalTime(timePassed);
@@ -35,7 +38,8 @@ export default Timer = ({gameEnded, setFinalTime}) => {
  
   return (
     <div
-      className={isRunning ? "fixed-bottom timer" : "d-none" }
+      className={isRunning && startTime != null ? "fixed-bottom timer" : "d-none" }
+      style={style}
     >
       <span className="p-2 bg-info rounded">{clockify(timePassed)}</span>
     </div>

@@ -7,7 +7,7 @@ export default Header = () => {
   const CharacterNames = useCharacterNames()
 
   let foundList = CharacterNames.map((name, i) => {
-    let display = FoundNames.includes(name) ? 'visible' : 'visible'
+    let display = FoundNames.includes(name) ? 'visible' : 'hidden';
     return <span key={i} style={{visibility: display}} className="found rounded">Found</span>
   });
   
