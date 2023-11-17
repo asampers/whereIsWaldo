@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import { FoundNamesProvider } from "./Context";
 
 export default Play = () => {
-  const [gameEnded, setGameEnded] = useState(true)
+  const [gameEnded, setGameEnded] = useState(false)
   const [finalTime, setFinalTime] = useState(null)
   
   return (

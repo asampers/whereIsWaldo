@@ -1,15 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { clockify } from "../utils/clockify";
 
 export default HighScores = () => {
-  const topTen = [{name: "Mark", time:"00:01:00"}, {name: "Jacob", time: "00:07:00"}, {name: "Larry the Bird", time: "00:08:00"}]
+  const [scores, setScores] = useState([]);
+
+  useEffect(() => {
+    const url = "/api/v1/scores/index";
+    fetch(url)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then((res) => setScores(res))
+      .catch(() => navigate("/"));
+  }, []);
   
-  let tableRows = topTen.map((row, i) => {
+  const hallOfFameScores = scores.map((row, i) => {
     return <tr key={i}>
-            <th scope="row">{i + 1}</th>
-            <td>{row.name}</td>
-            <td>{row.time}</td>
-          </tr>
+      <th scope="row">{i + 1}.</th>
+        <td>{row.name}</td>
+        <td>{clockify(row.time)}</td>
+    </tr>
   })
 
   return (
@@ -21,7 +34,7 @@ export default HighScores = () => {
         </tr>
       </thead>
       <tbody className="table-group-divider">
-        {tableRows}
+        {hallOfFameScores}
       </tbody>
     </table>
     </div>
