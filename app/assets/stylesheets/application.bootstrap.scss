@@ -1,18 +1,17 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-.header, .footer {
-  max-width: 1095px;
-}
-
 .header {
   position: relative;
+}
+
+.footer, .header {
+  max-width: 1095px;
 }
 
 .endScreen {
   background: rgb(0, 0, 0, 0.6);
   display: block;
-  text-align: center;
 }
 
 .highScores {
@@ -33,6 +32,9 @@
   max-height: 250px;
 }
 
+.demoImg {
+  margin-bottom: 16px;
+}
 .checkMarks {
   max-width: 750px;
   position: absolute;

@@ -3,16 +3,20 @@ import Header from "./Header";
 import GameBoard from "./GameBoard";
 import Timer from "./Timer";
 import EndScreen from "./EndScreen";
+import HighScores from "./HighScores";
 import Footer from "./Footer";
 import { FoundNamesProvider } from "./Context";
 
 export default Play = () => {
-  const [gameEnded, setGameEnded] = useState(false)
+  const [gameEnded, setGameEnded] = useState(true)
   const [finalTime, setFinalTime] = useState(null)
   
   return (
     <>
-      {gameEnded && <EndScreen time={finalTime} />}
+      {gameEnded && <EndScreen time={finalTime}>
+        <HighScores />
+        </EndScreen>
+      }
       <FoundNamesProvider>
         <Header />
         <GameBoard endGame={() => setGameEnded(true)}/>

@@ -3,9 +3,9 @@ import { clockify } from "../utils/clockify";
 
 export default HighScores = () => {
   return (
-    <div className="highScores container">
+    <div className="highScores container mt-3 mb-3">
     <table className="table table-sm">
-      <thead>
+      <thead className="table-dark">
         <tr>
           <th colSpan="12" className="text-center">High Scores</th>
         </tr>

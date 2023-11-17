@@ -14,14 +14,17 @@ export default Home = () => {
       <img src="charactersBanner.jpg" className="header-img img-fluid"/> 
       <h3>How to Play</h3>
       <p>Click on the image to make your guess.</p>
-      <img src="demoGuess.gif" className="img-fluid rounded"/>
+      <img src="demoGuess.gif" className="img-fluid rounded demoImg"/>
       <p>Find all the characters as fast as you can.</p>
-      <Link to="/play" className="btn btn-outline-dark">
+      <Link to="/play" className="btn btn-outline-dark mb-3">
         Start Game!
       </Link>
-      <HighScores />
+        <p className="text-center mb-0">Can you beat these scores?</p>
+        <HighScores />
+
+      <Footer />
     </div>
-    <Footer />
+    
     </>
   )
 }

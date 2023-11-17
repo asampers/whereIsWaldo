@@ -14,7 +14,7 @@ export default EndScreen = ({ time, children }) => {
               <h1 className="modal-title fs-5">You Did It!</h1>
             </div>
             <div className="modal-body">
-              <span>Your time was {clockify(time)}. </span>
+              <span className="text-center">Your time was {clockify(time)}. </span>
               {children}
             </div>
             <div className="modal-footer justify-content-center">
