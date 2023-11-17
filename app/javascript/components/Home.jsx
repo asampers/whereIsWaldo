@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import EndScreen from "./EndScreen";
 import Footer from "./Footer";
 
 export default Home = () => {
   return (
     <>
+    {/*<EndScreen time={2222222} />*/}
     <div className="container d-flex flex-column align-items-center">
       <h1>Find the Famous Artist</h1>
       <h2 className="text-body-secondary"> A Where's Waldo game</h2>
