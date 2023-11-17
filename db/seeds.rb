@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+sampleScores = [
+  {name: "Mark", time:17650}, 
+  {name: "Jacob", time: 25000}, 
+  {name: "Larry the Bird", time: 49090},
+  {name: "User", time:55100}, 
+  {name: "Oskar", time: 57600}, 
+  {name: "T-dog", time: 60300},
+  {name: "Shelly", time:72000}, 
+  {name: "Frasier", time: 78600}, 
+  {name: "Geo", time: 85900},
+  {name: "Rick", time: 90900},
+  ]
+
+sampleScores.each do |sample|
+  Score.find_or_create_by(sample)
+end
+
+p "Created or Found #{sampleScores.count} scores"
