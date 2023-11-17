@@ -19,7 +19,7 @@ export default Home = () => {
       <Link to="/play" className="btn btn-outline-dark mb-3">
         Start Game!
       </Link>
-        <p className="text-center mb-0">Can you beat these scores?</p>
+        <p className="text-center mb-0">Can you beat these times?</p>
         <HighScores />
 
       <Footer />

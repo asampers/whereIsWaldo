@@ -1,8 +1,9 @@
 import React from "react";
 import { clockify } from "../utils/clockify";
+import HighScores from "./HighScores";
 import { Link } from "react-router-dom";
 
-export default EndScreen = ({ time, children }) => {
+export default EndScreen = ({ time}) => {
 
 
   return (
@@ -14,12 +15,12 @@ export default EndScreen = ({ time, children }) => {
               <h1 className="modal-title fs-5">You Did It!</h1>
             </div>
             <div className="modal-body">
-              <span className="text-center">Your time was {clockify(time)}. </span>
-              {children}
+              <p className="text-center">Your time was {clockify(time)}. </p>
+              <HighScores />
             </div>
             <div className="modal-footer justify-content-center">
               <button type="button" className="btn btn-sm btn-outline-success">Play Again</button>
-              <button type="button" className="btn btn-sm btn-outline-secondary">Go Home</button>
+              <Link to="/" className="btn btn-sm btn-outline-secondary">Go Home</Link>
             </div>
           </div>
         </div>

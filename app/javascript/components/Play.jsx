@@ -13,10 +13,7 @@ export default Play = () => {
   
   return (
     <>
-      {gameEnded && <EndScreen time={finalTime}>
-        <HighScores />
-        </EndScreen>
-      }
+      {gameEnded && <EndScreen time={finalTime} />}
       <FoundNamesProvider>
         <Header />
         <GameBoard endGame={() => setGameEnded(true)}/>
