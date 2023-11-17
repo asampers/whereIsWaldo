@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import EndScreen from "./EndScreen";
+import HighScores from "./HighScores";
 import Footer from "./Footer";
 
 export default Home = () => {
@@ -18,6 +19,7 @@ export default Home = () => {
       <Link to="/play" className="btn btn-outline-dark">
         Start Game!
       </Link>
+      <HighScores />
     </div>
     <Footer />
     </>
