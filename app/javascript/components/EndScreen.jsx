@@ -23,7 +23,7 @@ export default EndScreen = ({time, startGame}) => {
             </div>
             <div className="modal-body">
               <p className="text-center">Your time was {clockify(time)}. </p>
-              <HighScores />
+              <HighScores time={time}/>
             </div>
             <div className="modal-footer justify-content-center">
               <button type="button" className="btn btn-sm btn-outline-success" onClick={() => resetGame()}>Play Again</button>
