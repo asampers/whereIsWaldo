@@ -15,7 +15,8 @@ export default Timer = ({gameEnded, setFinalTime}) => {
       setIsRunning(false)
       console.log(timePassed)
     } else {
-      setStartTime(Date.now())
+      setStartTime(Date.now());
+      setIsRunning(true);
     }
   }, [gameEnded]);
 
@@ -34,7 +35,7 @@ export default Timer = ({gameEnded, setFinalTime}) => {
     return () => {clearInterval(intervalId)};
   }, [isRunning]);
 
-  const timePassed = now - startTime;
+  let timePassed = now - startTime;
  
   return (
     <div

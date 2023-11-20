@@ -5,7 +5,7 @@ import Timer from "./Timer";
 import EndScreen from "./EndScreen";
 import HighScores from "./HighScores";
 import Footer from "./Footer";
-import { FoundNamesProvider } from "./Context";
+import { FoundNamesProvider, useFoundNamesDispatch } from "./Context";
 
 export default Play = () => {
   const [gameEnded, setGameEnded] = useState(false)
@@ -13,8 +13,8 @@ export default Play = () => {
   
   return (
     <>
-      {gameEnded && <EndScreen time={finalTime} />}
       <FoundNamesProvider>
+        {gameEnded && <EndScreen time={finalTime} startGame={() => setGameEnded(false)} />}
         <Header />
         <GameBoard endGame={() => setGameEnded(true)}/>
       </FoundNamesProvider>  

@@ -2,8 +2,15 @@ import React from "react";
 import { clockify } from "../utils/clockify";
 import HighScores from "./HighScores";
 import { Link } from "react-router-dom";
+import { useFoundNamesDispatch } from "./Context";
 
-export default EndScreen = ({ time}) => {
+export default EndScreen = ({time, startGame}) => {
+  const dispatch = useFoundNamesDispatch()
+
+  function resetGame() {
+    startGame();
+    dispatch({type:'clearAll'})
+  }
 
 
   return (
@@ -19,7 +26,7 @@ export default EndScreen = ({ time}) => {
               <HighScores />
             </div>
             <div className="modal-footer justify-content-center">
-              <button type="button" className="btn btn-sm btn-outline-success">Play Again</button>
+              <button type="button" className="btn btn-sm btn-outline-success" onClick={() => resetGame()}>Play Again</button>
               <Link to="/" className="btn btn-sm btn-outline-secondary">Go Home</Link>
             </div>
           </div>

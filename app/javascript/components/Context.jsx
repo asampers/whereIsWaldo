@@ -45,6 +45,9 @@ function foundNamesReducer(FoundNames, action) {
     case 'added': {
       return [...FoundNames, action.nextName];
     }
+    case 'clearAll' : {
+      return [];
+    }
     default: {
       throw Error('Unknown action: ' + action.type);
     }
