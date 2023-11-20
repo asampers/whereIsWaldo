@@ -13,7 +13,6 @@ export default Timer = ({gameEnded, setFinalTime}) => {
     if (gameEnded) {
       setFinalTime(timePassed);
       setIsRunning(false)
-      console.log(timePassed)
     } else {
       setStartTime(Date.now());
       setIsRunning(true);

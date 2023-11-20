@@ -9,6 +9,7 @@ export default EndScreen = ({time, startGame}) => {
 
   function resetGame() {
     startGame();
+    window.scrollTo({top:0})
     dispatch({type:'clearAll'})
   }
 

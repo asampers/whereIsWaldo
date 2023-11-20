@@ -17,7 +17,7 @@ export default Home = () => {
       <Link to="/play" className="btn btn-outline-dark">
         Start Game!
       </Link>
-      {/*<HighScores />*/}
+      <HighScores />
       <Footer />
     </div>
     </>
