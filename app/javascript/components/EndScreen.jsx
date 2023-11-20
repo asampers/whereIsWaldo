@@ -18,11 +18,11 @@ export default EndScreen = ({time, startGame}) => {
       <div className="modal endScreen" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden={time == null}>
         <div className="modal-dialog">
           <div className="modal-content">
-            <div className="modal-header justify-content-center">
-              <h1 className="modal-title fs-5">You Did It!</h1>
+            <div className="modal-header justify-content-center pb-2">
+              <h1 className="modal-title fs-3 mb-0">You Did It!</h1>
             </div>
             <div className="modal-body">
-              <p className="text-center">Your time was {clockify(time)}. </p>
+              <p className="text-center fs-5 mb-0">Your time was {clockify(time)}. </p>
               <HighScores time={time}/>
             </div>
             <div className="modal-footer justify-content-center">

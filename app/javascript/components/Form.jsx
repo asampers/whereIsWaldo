@@ -5,21 +5,19 @@ export default Form = ({submit}) => {
   
   return (
     <form onSubmit={(e) => submit(e, name)}>
-      <div className="mb-3 row align-items-end">
-        <div className="col">
-          <label htmlFor="name" className="form-label">
-            Enter Your Name
-          </label>
+      <p className="text-center">You made the Top 10!</p>
+      <div className="mb-3 row justify-content-center">
+        <div className="col-6">
           <input
             type="text"
             className="form-control"
             id="name"
-            placeholder="Name"
+            placeholder="Enter Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div> 
-        <div className="col">
+        <div className="col-4">
           <button type="submit" className="btn btn-primary">
             Record Score
           </button>

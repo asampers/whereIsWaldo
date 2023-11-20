@@ -60,7 +60,7 @@ export default HighScores = ({time}) => {
   return (
     <div className="highScores container mt-3 mb-3">
       {bestTime && !updated && <Form submit={onSubmit}/>}
-      {bestTime && updated && <p className="text-center">Congratulations!</p>}
+      {bestTime && updated && <p className="text-center">Congratulations! Your score has been saved.</p>}
       {!bestTime && <p className="text-center">Can you make it into the Top 10?</p>}
     <table className="table table-sm">
       <thead className="table-dark">
