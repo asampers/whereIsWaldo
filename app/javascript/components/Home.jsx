@@ -14,10 +14,9 @@ export default Home = () => {
       <p>Click on the image to make your guess.</p>
       <img src="demoGuess.gif" className="img-fluid rounded demoImg"/>
       <p>Find all the characters as fast as you can.</p>
-      <Link to="/play" className="btn btn-outline-dark mb-3">
+      <Link to="/play" className="btn btn-outline-dark">
         Start Game!
       </Link>
-      <p className="text-center mb-0">Can you beat these times?</p>
       <HighScores />
       <Footer />
     </div>

@@ -22,7 +22,7 @@ export default HighScores = ({time}) => {
   const onSubmit = (event, name) => {
     event.preventDefault();
     const url = "/api/v1/scores/create";
-
+    if(name.length == 0) {name = "Anon"}
     const body = {
       name,
       time
@@ -54,12 +54,14 @@ export default HighScores = ({time}) => {
         <td>{clockify(row.time)}</td>
     </tr>
   })
+  
+  let bestTime = scores.length > 0 ? scores[scores.length-1].time >= time : null
 
   return (
     <div className="highScores container mt-3 mb-3">
-      {time && !updated && <Form submit={onSubmit}/>}
-      {time && updated && <p className="text-center">Congratulations!</p>}
-      {!time && <p className="text-center">Can you make it into the Top 10?</p>}
+      {bestTime && !updated && <Form submit={onSubmit}/>}
+      {bestTime && updated && <p className="text-center">Congratulations!</p>}
+      {!bestTime && <p className="text-center">Can you make it into the Top 10?</p>}
     <table className="table table-sm">
       <thead className="table-dark">
         <tr>

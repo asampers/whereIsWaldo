@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Score.destroy_all
+
 sampleScores = [
   {name: "Mark", time:17650}, 
   {name: "Jacob", time: 25000}, 
@@ -19,7 +22,7 @@ sampleScores = [
   ]
 
 sampleScores.each do |sample|
-  Score.find_or_create_by(sample)
+  Score.create!(sample)
 end
 
-p "Created or Found #{sampleScores.count} scores"
+p "Created #{sampleScores.count} scores"

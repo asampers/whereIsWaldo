@@ -1,6 +1,6 @@
 class Api::V1::ScoresController < ApplicationController
   def index
-    score = Score.all.order(time: :asc)
+    score = Score.order(time: :asc).limit(10)
     render json: score
   end
 
