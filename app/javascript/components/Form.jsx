@@ -19,7 +19,7 @@ export default Form = ({submit}) => {
           />
         </div> 
         <div className="col-4">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary text-nowrap">
             Record Score
           </button>
         </div>  

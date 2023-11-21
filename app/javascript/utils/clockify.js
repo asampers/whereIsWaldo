@@ -25,5 +25,9 @@ export const clockify = (time) => {
     millisecs = "0" + millisecs;
   }
 
+  if (millisecs >= 100) {
+    millisecs = "00";
+  }
+
   return `${mins}:${secs}:${millisecs}`;
 };

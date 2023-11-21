@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { clockify } from "../utils/clockify";
 
 export default Timer = ({gameEnded, setFinalTime}) => {
@@ -6,8 +6,8 @@ export default Timer = ({gameEnded, setFinalTime}) => {
   const [now, setNow] = useState(null);
   const [isRunning, setIsRunning] = useState(true);
   
-  let heightDifference = window.innerHeight - window.document.body.offsetHeight;
-  let style = {marginBottom: `${heightDifference > 0 ? heightDifference : 20}px`}
+  const heightDifference = (window.innerHeight - window.document.body.offsetHeight);
+  const style = {marginBottom: `${heightDifference > 0 ? heightDifference : 20}px`}
 
   useEffect(() => {
     if (gameEnded) {
