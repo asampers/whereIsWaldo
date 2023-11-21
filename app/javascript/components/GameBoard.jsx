@@ -21,7 +21,6 @@ export default Gameboard = ({endGame}) => {
   });
 
   const setAllStates = (e) => {
-    if (FoundNames.length == 5) return;
     let guessX = e.nativeEvent.offsetX;
     let guessY = e.nativeEvent.offsetY
     let targetX = e.pageX;
@@ -62,7 +61,7 @@ export default Gameboard = ({endGame}) => {
       <Target styled={targetPos} onClick={closeTarget}>
         {characterList}
       </Target>
-      {outcome.visible && <AlertOutcome found={outcome.name} styled={targetPos}/>}
+      <AlertOutcome found={outcome} styled={targetPos}/>
     </>  
   )
 }
