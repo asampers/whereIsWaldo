@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export default Form = ({submit}) => {
+export default Form = ({submit, time}) => {
   const [name, setName] = useState("")
   
   return (
-    <form onSubmit={(e) => submit(e, name)}>
+    <form onSubmit={(e) => submit(e, name, time)}>
       <p className="text-center">You made the Top 10!</p>
       <div className="mb-3 row justify-content-center align-items-center">
         <div className="col-6">
