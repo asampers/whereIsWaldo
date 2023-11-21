@@ -6,12 +6,13 @@ export default Form = ({submit}) => {
   return (
     <form onSubmit={(e) => submit(e, name)}>
       <p className="text-center">You made the Top 10!</p>
-      <div className="mb-3 row justify-content-center">
+      <div className="mb-3 row justify-content-center align-items-center">
         <div className="col-6">
           <input
             type="text"
             className="form-control"
             id="name"
+            maxLength="15"
             placeholder="Enter Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
