@@ -41,7 +41,7 @@ export default Timer = ({gameEnded, setFinalTime}) => {
       className={isRunning && startTime != null ? "fixed-bottom timer" : "d-none" }
       style={style}
     >
-      <span className="p-2 bg-info rounded">{clockify(timePassed)}</span>
+      <span className="p-2 rounded">{clockify(timePassed)}</span>
     </div>
   );
 }
