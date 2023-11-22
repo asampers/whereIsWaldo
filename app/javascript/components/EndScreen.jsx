@@ -13,7 +13,6 @@ export default EndScreen = ({time, startGame}) => {
     dispatch({type:'clearAll'})
   }
 
-
   return (
     <>
       <div className="modal endScreen" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden={time == null}>
