@@ -3,8 +3,8 @@ import GameImage from "./GameImage";
 import GuessBtn from "./GuessBtn";
 import Target from "./TargetBox";
 import AlertOutcome from "./AlertOutcome";
-
 import { useFoundNamesDispatch, useFoundNames } from "./Context";
+import { getClickPositions, setBoxPositions } from "../utils/gameBoardHelper";
 
 export default Gameboard = ({endGame, characters}) => {
   const [targetPos, setTargetPos] = useState({x:0, y: 0, show: false})
@@ -21,12 +21,7 @@ export default Gameboard = ({endGame, characters}) => {
   });
 
   const setAllStates = (e) => {
-    let guessX = e.nativeEvent.offsetX;
-    let guessY = e.nativeEvent.offsetY
-    let targetX = e.pageX;
-    let targetY = e.pageY;
-    let imgWidth = e.target.clientWidth;
-    let imgHeight = e.target.clientHeight;
+    const { guessX, guessY, targetX, targetY, imgWidth, imgHeight } = getClickPositions(e)
     setTargetPos({x:targetX, y:targetY, show:true})
     setGuess({x:guessX, y:guessY})
     setOutcome({...outcome, visible: false})
@@ -36,10 +31,7 @@ export default Gameboard = ({endGame, characters}) => {
   const closeTarget = () => {setTargetPos({...targetPos, show:false})}
   
   const foundCharac = (charac) => {
-    let left = guess.x - (.04 * imgSize.w)
-    let right = guess.x + (.04 * imgSize.w)
-    let top = guess.y - (.06 * imgSize.h)
-    let bottom = guess.y + (.06 * imgSize.h)
+    const { left, right, top, bottom } = setBoxPositions(guess, imgSize)
     let xBtwn = left <= (charac.x  * imgSize.w) && (charac.x  * imgSize.w) <= right;
     let yBtwn = top <= (charac.y * imgSize.h) && (charac.y * imgSize.h) <= bottom;
     return xBtwn && yBtwn;
@@ -47,8 +39,8 @@ export default Gameboard = ({endGame, characters}) => {
 
   const handleDropdownGuess = (charac) => {
     let found = foundCharac(charac);
-    if(found){dispatch({type: 'added', nextName: charac.name})};
     let outcome = found ? charac.name : null;
+    if(found){dispatch({type: 'added', nextName: charac.name})};
     closeTarget();
     setOutcome({visible: true, name: outcome})
     setTimeout(() => {setOutcome({visible: false, name: null})}, 3000)
@@ -57,7 +49,6 @@ export default Gameboard = ({endGame, characters}) => {
 
   return (
     <>
-    
       <GameImage onClick={setAllStates} />
       <Target styled={targetPos} onClick={closeTarget}>
         {characterList}
