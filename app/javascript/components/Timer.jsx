@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { clockify } from "../utils/clockify";
+import getTimerStyle from "../utils/timerHelper";
 
 export default Timer = ({gameEnded, setFinalTime}) => {
   const [startTime, setStartTime] = useState(null);
   const [now, setNow] = useState(null);
   const [isRunning, setIsRunning] = useState(true);
-  
-  const heightDifference = (window.innerHeight - window.document.body.offsetHeight);
-  const style = {marginBottom: `${heightDifference > 0 ? heightDifference : 20}px`}
-  const ready = isRunning && startTime != null && now != null
+
+  const style = getTimerStyle();
+  const ready = isRunning && startTime != null && now != null;
 
   useEffect(() => {
     if (gameEnded) {
