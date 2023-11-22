@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import scoreHelper from "../utils/scoreHelper";
 import { clockify } from "../utils/clockify";
 import Form from "./Form";

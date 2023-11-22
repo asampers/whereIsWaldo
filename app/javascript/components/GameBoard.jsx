@@ -3,17 +3,17 @@ import GameImage from "./GameImage";
 import GuessBtn from "./GuessBtn";
 import Target from "./TargetBox";
 import AlertOutcome from "./AlertOutcome";
+
 import { useFoundNamesDispatch, useFoundNames } from "./Context";
 
-export default Gameboard = ({endGame}) => {
+export default Gameboard = ({endGame, characters}) => {
   const [targetPos, setTargetPos] = useState({x:0, y: 0, show: false})
   const [outcome, setOutcome] = useState({visible: false, name:null});
   const [guess, setGuess] = useState({x: null, y: null})
   const [imgSize, setImgSize] = useState({w:0, h:0})
   const FoundNames = useFoundNames();
   const dispatch = useFoundNamesDispatch()
-  const characters = [{name: "Da Vinci", x:0.166, y:0.374}, {name: "Kahlo", x:0.895, y:0.2925}, {name: "Picasso", x:0.7875, y:0.944}, {name: "Van Gogh", x:0.145, y:0.824}, {name: "Warhol", x:0.0325, y:0.1625}];
-
+  
   let characterList = characters.map((charac, i) => {
     if(!FoundNames.includes(charac.name)) {
       return <GuessBtn key={i} onClick={() => handleDropdownGuess(charac)}>{charac.name}</GuessBtn>
@@ -57,6 +57,7 @@ export default Gameboard = ({endGame}) => {
 
   return (
     <>
+    
       <GameImage onClick={setAllStates} />
       <Target styled={targetPos} onClick={closeTarget}>
         {characterList}

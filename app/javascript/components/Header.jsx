@@ -1,12 +1,11 @@
-import React, {useRef, useEffect} from "react";
-import { Link } from "react-router-dom";
-import { useCharacterNames, useFoundNames } from "./Context";
+import React from "react";
+import { useFoundNames } from "./Context";
 
-export default Header = () => {
+export default Header = ({characters}) => {
   const FoundNames = useFoundNames();
-  const CharacterNames = useCharacterNames()
-
-  let foundList = CharacterNames.map((name, i) => {
+  const characterNames = characters.map((charac) => charac.name)
+  
+  let foundList = characterNames.map((name, i) => {
     let display = FoundNames.includes(name) ? 'visible' : 'hidden';
     return <span key={i} style={{visibility: display}} className="found rounded">Found</span>
   });
