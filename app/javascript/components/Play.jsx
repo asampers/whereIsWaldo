@@ -31,7 +31,7 @@ export default Play = () => {
         <Header characters={characters}/>
         <GameBoard endGame={() => setGameEnded(true)} characters={characters}/>
       </FoundNamesProvider>  
-      <Timer  gameEnded={gameEnded} setFinalTime={setFinalTime}/>
+      <Timer gameEnded={gameEnded} setFinalTime={setFinalTime}/>
       <Footer />
     </>
   )
