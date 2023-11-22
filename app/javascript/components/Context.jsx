@@ -1,7 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, useReducer } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 
 const FoundNamesContext = createContext()
-
 const FoundNamesDispatchContext = createContext(null);
 
 export function FoundNamesProvider({ children }) {
