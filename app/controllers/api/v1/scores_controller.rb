@@ -5,11 +5,11 @@ class Api::V1::ScoresController < ApplicationController
   end
 
   def create
-    score = Score.create!(score_params)
-    if score
+    score = Score.new(score_params)
+    if score.save
       render json: score
     else  
-      render json: score.errors
+      render json: { message: "Validation Failure", errors: score.errors }, status: 422
     end    
   end
 
