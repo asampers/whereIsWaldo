@@ -8,7 +8,6 @@ RSpec.describe "Api::V1::Characters", type: :request do
     end
     
     it "returns all characters" do 
-      
       expect(json.count).to eq(5)
     end
 

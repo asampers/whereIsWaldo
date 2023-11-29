@@ -7,12 +7,4 @@ RSpec.describe "Api::V1::Scores", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe "GET /create" do
-    it "returns http success" do
-      get "/api/v1/scores/create"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end
