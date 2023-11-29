@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :score do
     name { "Joe" }
-    time { 20000 }
+    time { rand(1700..20000) }
   end
 end
 
