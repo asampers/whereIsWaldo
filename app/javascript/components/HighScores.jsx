@@ -1,9 +1,9 @@
 import React from "react";
-import scoreHelper from "../utils/scoreHelper";
+import { scoreHelper } from "../utils/scoreHelper";
 import { clockify } from "../utils/clockify";
-import Form from "./Form";
+import { Form } from "./Form";
 
-export default HighScores = ({time}) => {
+export const HighScores = ({time}) => {
   const {scores, updated, postScore } = scoreHelper();
   
   const hallOfFameScores = scores.map((row, i) => {

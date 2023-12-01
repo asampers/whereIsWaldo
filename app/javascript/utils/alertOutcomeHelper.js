@@ -1,4 +1,4 @@
-export default getAlertStyling = (found, position) => {
+export const getAlertStyling = (found, position) => {
   let alertType = found.name ? "alert-success" : "alert-danger";
   let message = found.name ? `You found ${found.name}` : "Ope, try again!";
   let display = !found.visible ? "d-none" : "";

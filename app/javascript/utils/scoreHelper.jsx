@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-export default scoreHelper = () =>{
+export const scoreHelper = () =>{
   const [scores, setScores] = useState([]);
   const [updated, setUpdated] = useState(null)
 

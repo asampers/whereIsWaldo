@@ -1,10 +1,10 @@
 import React from "react";
 import { clockify } from "../utils/clockify";
-import HighScores from "./HighScores";
+import {HighScores} from "./HighScores";
 import { Link } from "react-router-dom";
 import { useFoundNamesDispatch } from "./Context";
 
-export default EndScreen = ({time, startGame}) => {
+export const EndScreen = ({time, startGame}) => {
   const dispatch = useFoundNamesDispatch()
 
   function resetGame() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HighScores from "./HighScores";
+import { HighScores } from "./HighScores";
 import Footer from "./Footer";
 
 export default Home = () => {

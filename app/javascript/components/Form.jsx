@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default Form = ({submit, time}) => {
+export const Form = ({submit, time}) => {
   const [name, setName] = useState("")
   
   return (
