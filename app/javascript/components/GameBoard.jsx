@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import GameImage from "./GameImage";
-import GuessBtn from "./GuessBtn";
-import Target from "./TargetBox";
-import AlertOutcome from "./AlertOutcome";
+import {GameImage} from "./GameImage";
+import {GuessBtn} from "./GuessBtn";
+import { Target } from "./TargetBox";
+import { AlertOutcome } from "./AlertOutcome";
 import { useFoundNamesDispatch, useFoundNames } from "./Context";
 import { getClickPositions, setBoxPositions } from "../utils/gameBoardHelper";
 
-export default Gameboard = ({endGame, characters}) => {
+export const GameBoard = ({endGame, characters}) => {
   const [targetPos, setTargetPos] = useState({x:0, y: 0, show: false})
   const [outcome, setOutcome] = useState({visible: false, name:null});
   const [guess, setGuess] = useState({x: null, y: null})

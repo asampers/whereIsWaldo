@@ -1,4 +1,4 @@
-export default getTimerStyle = () => {
+export const getTimerStyle = () => {
   const heightDifference =
     window.innerHeight - window.document.body.offsetHeight;
   const style = {

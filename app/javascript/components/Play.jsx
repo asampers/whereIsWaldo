@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import GameBoard from "./GameBoard";
-import Timer from "./Timer";
+import { Header } from "./Header";
+import { GameBoard } from "./GameBoard";
+import { Timer } from "./Timer";
 import { EndScreen } from "./EndScreen";
-import Footer from "./Footer";
+import { Footer } from "./Footer";
 import { FoundNamesProvider } from "./Context";
 
-export default Play = () => {
+export const Play = () => {
   const [gameEnded, setGameEnded] = useState(false)
   const [finalTime, setFinalTime] = useState(null)
   const [characters, setCharacters] = useState([]);

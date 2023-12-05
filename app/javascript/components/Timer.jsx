@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { clockify } from "../utils/clockify";
-import getTimerStyle from "../utils/timerHelper";
+import { getTimerStyle } from "../utils/timerHelper";
 
-export default Timer = ({gameEnded, setFinalTime}) => {
+export const Timer = ({gameEnded, setFinalTime}) => {
   const [startTime, setStartTime] = useState(null);
   const [now, setNow] = useState(null);
   const [isRunning, setIsRunning] = useState(true);

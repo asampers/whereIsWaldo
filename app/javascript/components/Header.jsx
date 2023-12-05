@@ -1,7 +1,7 @@
 import React from "react";
 import { useFoundNames } from "./Context";
 
-export default Header = ({characters}) => {
+export const Header = ({characters}) => {
   const FoundNames = useFoundNames();
   const characterNames = characters.map((charac) => charac.name)
   

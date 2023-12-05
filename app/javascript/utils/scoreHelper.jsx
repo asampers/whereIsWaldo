@@ -18,8 +18,8 @@ export const scoreHelper = () =>{
       .catch(() => navigate("/"));
   }, [updated]);
 
-  const postScore = (event, name, time) => {
-    event.preventDefault();
+  const postScore = (name, time) => {
+    
     const url = "/api/v1/scores/create";
     if(name.length == 0) {name = "Anon"}
     const body = {

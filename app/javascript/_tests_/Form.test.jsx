@@ -17,5 +17,6 @@ describe("Form component", () => {
     await user.click(screen.getByRole("button", { name: /Record Score/i }));
 
     expect(onSubmit).toHaveBeenCalledTimes(1);
+    expect(onSubmit).toHaveBeenCalledWith(name, time)
   });
 });

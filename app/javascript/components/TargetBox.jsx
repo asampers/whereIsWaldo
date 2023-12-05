@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 
-export default Target = ({children, styled, onClick}) => {
+export const Target = ({children, styled, onClick}) => {
   let dropdown = useRef()
   let style = {left:styled.x + 'px', top:styled.y + 'px', display: styled.show ? 'flex' : 'none'}
   if (dropdown.current)dropdown.current.scrollIntoView({ behavior: "instant", block: "nearest", inline:"nearest"})

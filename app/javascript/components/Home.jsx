@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HighScores } from "./HighScores";
-import Footer from "./Footer";
+import { Footer } from "./Footer";
 
-export default Home = () => {
+export const Home = () => {
   return (
     <div className="container d-flex flex-column align-items-center mt-3 mb-3">
       <h1>Find the Famous Artist</h1>
