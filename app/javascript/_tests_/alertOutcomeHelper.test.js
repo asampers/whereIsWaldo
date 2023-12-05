@@ -10,3 +10,14 @@ test("returns correct style when character found", () => {
   expect(display).toBe("");
   expect(style).toEqual({ left: "1px", position: "absolute", top: "2px" });
 });
+
+test("returns correct style when character NOT found", () => {
+  const { alertType, message, display, style } = getAlertStyling(
+    { name: "", visible: true },
+    { x: 1, y: 2 }
+  );
+  expect(alertType).toBe("alert-danger");
+  expect(message).toBe(`Ope, try again!`);
+  expect(display).toBe("");
+  expect(style).toEqual({ left: "1px", position: "absolute", top: "2px" });
+});
