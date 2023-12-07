@@ -5,8 +5,10 @@ import { Timer } from "./Timer";
 import { EndScreen } from "./EndScreen";
 import { Footer } from "./Footer";
 import { FoundNamesProvider } from "./Context";
+import { useNavigate } from "react-router-dom";
 
 export const Play = () => {
+  const navigate = useNavigate()
   const [gameEnded, setGameEnded] = useState(false)
   const [finalTime, setFinalTime] = useState(null)
   const [characters, setCharacters] = useState([]);

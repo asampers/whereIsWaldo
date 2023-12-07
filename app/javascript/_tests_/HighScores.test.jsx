@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { HighScores } from "../components/HighScores";
 import { scoreHelper } from "../utils/scoreHelper"
 
-
 jest.mock("../utils/scoreHelper", () => ({
   scoreHelper: jest.fn(),
 }));

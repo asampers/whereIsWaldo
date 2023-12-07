@@ -15,6 +15,7 @@ const characters = [
   {name: "Van Gogh"},
   {name: "Warhol"},
 ]
+
 describe("Header component", () => {
   test("it renders correctly when 1 character is found", () => {
     useFoundNames.mockReturnValueOnce(["Kahlo"]);

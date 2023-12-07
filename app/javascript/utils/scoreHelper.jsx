@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-export const scoreHelper = () =>{
+export const scoreHelper = () => {
   const [scores, setScores] = useState([]);
   const [updated, setUpdated] = useState(null)
 
@@ -15,11 +15,10 @@ export const scoreHelper = () =>{
         throw new Error("Network response was not ok.");
       })
       .then((res) => setScores(res))
-      .catch(() => navigate("/"));
+      .catch((e) => console.log(e.message));
   }, [updated]);
 
   const postScore = (name, time) => {
-    
     const url = "/api/v1/scores/create";
     if(name.length == 0) {name = "Anon"}
     const body = {
