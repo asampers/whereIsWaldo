@@ -1,24 +1,22 @@
-# README
+# Find the Famous Artist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An implementation of a Where's Waldo style game, built as part of [The Odin Project](https://www.theodinproject.com/lessons/react-new-where-s-waldo-a-photo-tagging-app).
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- React Frontend
+- Rails Backend
+- Stopwatch measures and displays player's time
+- Players can post their time to the database when qualified for Top 10 fastest times
+- Hall of Fame component fetches times from database, only 10 fastest times are retrieved
 
-* System dependencies
+- **Style**
+  - designed with Bootstrap
+  - responsive layout
+- **Testing**
+  - Rspec for API controller
+  - Jest for React components
 
-* Configuration
+### Contact
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Anna Sampers - [LinkedIn](https://linkedin.com/in/anna-sampers) - annasampers@gmail.com
